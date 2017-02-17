@@ -35,11 +35,26 @@ object containing a account and other details.
             "branchId": "SBI001",
         }
 
+            
 + Response 201 (application/json)
 
     + Headers
 
             Location: /accounts/1002
+
+    + Body
+
+            {
+                "id": "1002",
+                "accountType": "Current",
+                "accountNo": "100000012789",
+                "branchId": "SBI001",
+            }
+            
+### Get a single Account [GET /accounts/{id}]
+
+
++ Response 200 (application/json)
 
     + Body
 
