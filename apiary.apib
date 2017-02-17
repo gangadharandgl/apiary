@@ -1,0 +1,51 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Accounts API
+
+Accounts is a simple API allowing consumers to view accounts.
+
+## Accounts Collection [/accounts (?size)]
+
+### List All Accounts [GET]
+
++ Parameters size 
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "1001",
+                "accountType": "Savings",
+                "accountNo": "100000012345",
+                "branchId": "SBI001",
+            }
+        ]
+
+### Create a New Account [POST]
+
+You may create your own account using this action. It takes a JSON
+object containing a account and other details.
+
++ Request (application/json)
+
+        {
+            "accountType": "Current",
+            "accountNo": "100000012789",
+            "branchId": "SBI001",
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /accounts/1002
+
+    + Body
+
+            {
+                "id": "1002",
+                "accountType": "Current",
+                "accountNo": "100000012789",
+                "branchId": "SBI001",
+            }
